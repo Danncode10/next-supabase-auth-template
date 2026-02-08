@@ -1,23 +1,24 @@
 import Link from "next/link";
 import { login } from "./actions";
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: { error?: string; message?: string };
+  searchParams: Promise<{ error?: string; message?: string }>;
 }) {
+  const resolvedSearchParams = await searchParams;
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
       <main className="flex w-full max-w-md flex-col gap-8 rounded-lg bg-white p-8 shadow-lg dark:bg-zinc-900 dark:border-zinc-800 border border-zinc-200">
         <div className="text-center">
-          {searchParams.error && (
+          {resolvedSearchParams.error && (
             <p className="text-sm p-2 text-red-500 bg-red-100 rounded-md mb-4 dark:bg-red-900/20 dark:text-red-300">
-              {searchParams.error && decodeURIComponent(searchParams.error)}
+              {decodeURIComponent(resolvedSearchParams.error)}
             </p>
           )}
-          {searchParams.message && (
+          {resolvedSearchParams.message && (
             <p className="text-sm p-2 text-green-500 bg-green-100 rounded-md mb-4 dark:bg-green-900/20 dark:text-green-300">
-              {searchParams.message && decodeURIComponent(searchParams.message)}
+              {decodeURIComponent(resolvedSearchParams.message)}
             </p>
           )}
           <h1 className="text-2xl font-bold text-black dark:text-white">Welcome Back</h1>

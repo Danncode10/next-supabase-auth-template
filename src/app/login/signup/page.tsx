@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { signup } from "./actions";
 
-export default function SignupPage({
+export default async function SignupPage({
   searchParams,
 }: {
-  searchParams: { error?: string; message?: string };
+  searchParams: {
+    error?: string;
+    message?: string;
+  };
 }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
@@ -12,12 +15,12 @@ export default function SignupPage({
         <div className="text-center">
           {searchParams.error && (
             <p className="text-sm p-2 text-red-500 bg-red-100 rounded-md mb-4 dark:bg-red-900/20 dark:text-red-300">
-              {searchParams.error && decodeURIComponent(searchParams.error)}
+              {decodeURIComponent(searchParams.error)}
             </p>
           )}
           {searchParams.message && (
             <p className="text-sm p-2 text-green-500 bg-green-100 rounded-md mb-4 dark:bg-green-900/20 dark:text-green-300">
-              {searchParams.message && decodeURIComponent(searchParams.message)}
+              {decodeURIComponent(searchParams.message)}
             </p>
           )}
           <h1 className="text-2xl font-bold text-black dark:text-white">Create Account</h1>
