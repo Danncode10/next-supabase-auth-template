@@ -85,7 +85,7 @@ export default async function LoginPage() {
         </Card>
 
         <p className="mt-8 text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             href="/login/signup"
             className="font-bold text-black underline-offset-4 hover:underline dark:text-white"
