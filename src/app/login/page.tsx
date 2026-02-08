@@ -12,7 +12,7 @@ export default function LoginPage({
         <div className="text-center">
           <h1 className="text-2xl font-bold text-black dark:text-white">Welcome Back</h1>
           <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-            Sign in to your SnapBase account
+            Sign in to your account
           </p>
         </div>
 

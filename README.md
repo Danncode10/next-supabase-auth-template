@@ -90,8 +90,16 @@ Create a new repository and push your code.
     - `SUPABASE_SERVICE_ROLE_KEY`
 4.  Click **Deploy**.
 
-### 3. Configure Supabase Redirects
-In your Supabase Dashboard, go to **Auth > URL Configuration** and add your Vercel deployment URL (e.g., `https://your-project.vercel.app/auth/callback`) to the **Redirect URLs**.
+### 3. ⚠️ CRITICAL: Configure Supabase Auth
+Once Vercel gives you your deployment URL (e.g., `https://your-app.vercel.app`), you MUST update your Supabase settings or authentication will fail:
+
+1.  Go to your **[Supabase Dashboard](https://supabase.com/dashboard)**.
+2.  Navigate to **Authentication > URL Configuration**.
+3.  **Site URL**: Change this to your Vercel production URL (e.g., `https://your-app.vercel.app`).
+4.  **Redirect URLs**: Add your callback URL: `https://your-app.vercel.app/auth/callback`.
+
+> [!TIP]
+> If you have custom domains, make sure to add them here as well so Supabase knows where to safely redirect users after login/signup.
 
 ---
 

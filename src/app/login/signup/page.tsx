@@ -12,7 +12,7 @@ export default function SignupPage({
         <div className="text-center">
           <h1 className="text-2xl font-bold text-black dark:text-white">Create Account</h1>
           <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-            Join SnapBase and start managing your images
+            Join us and get started with your new account
           </p>
         </div>
 

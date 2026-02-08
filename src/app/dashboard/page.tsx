@@ -19,7 +19,7 @@ export default async function DashboardPage() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
       <header className="flex items-center justify-between border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-900">
-        <h1 className="text-xl font-bold text-black dark:text-white">SnapBase Dashboard</h1>
+        <h1 className="text-xl font-bold text-black dark:text-white">Dashboard</h1>
         <div className="flex items-center gap-4">
           <span className="text-sm text-zinc-600 dark:text-zinc-400">
             {user.email}
