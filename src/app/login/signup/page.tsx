@@ -4,12 +4,22 @@ import { signup } from "./actions";
 export default function SignupPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string; message?: string }>;
+  searchParams: { error?: string; message?: string };
 }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
       <main className="flex w-full max-w-md flex-col gap-8 rounded-lg bg-white p-8 shadow-lg dark:bg-zinc-900 dark:border-zinc-800 border border-zinc-200">
         <div className="text-center">
+          {searchParams.error && (
+            <p className="text-sm p-2 text-red-500 bg-red-100 rounded-md mb-4 dark:bg-red-900/20 dark:text-red-300">
+              {searchParams.error && decodeURIComponent(searchParams.error)}
+            </p>
+          )}
+          {searchParams.message && (
+            <p className="text-sm p-2 text-green-500 bg-green-100 rounded-md mb-4 dark:bg-green-900/20 dark:text-green-300">
+              {searchParams.message && decodeURIComponent(searchParams.message)}
+            </p>
+          )}
           <h1 className="text-2xl font-bold text-black dark:text-white">Create Account</h1>
           <p className="mt-2 text-zinc-600 dark:text-zinc-400">
             Join us and get started with your new account
